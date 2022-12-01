@@ -1,7 +1,15 @@
+# https://adventofcode.com/2022/day/1
+
 from typing import Dict
 
 
 def tabulate_elf_calories(in_str: str) -> Dict[int, int]:
+    """Take problem input string, and produce a dict of calories consumed by
+    each elf
+
+    :returns: Key: Elf number, starting at 0
+              Value: Total calories consumed by that elf
+    """
 
     groups = in_str.split("\n\n")
 
@@ -15,6 +23,7 @@ def tabulate_elf_calories(in_str: str) -> Dict[int, int]:
 
 
 def max_calories_of_elf_with_most_calories(in_str: str) -> int:
+    """Given the problem input string, return the most calories any elf consumed"""
     elf_calories = tabulate_elf_calories(in_str)
 
     max_calories = max(elf_calories.values())
@@ -22,6 +31,8 @@ def max_calories_of_elf_with_most_calories(in_str: str) -> int:
 
 
 def calorie_sum_of_top_three_elves(in_str: str) -> int:
+    """Given the problem input string, return the total calories consumed by the
+    top three calorie consuming elves"""
     elf_calories = tabulate_elf_calories(in_str)
 
     calories_sorted = sorted(elf_calories.values(), reverse=True)
