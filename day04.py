@@ -3,6 +3,9 @@
 from typing import List
 
 
+"""Day 4 is an exercise in basic set theory - we check for intersections and subsets"""
+
+
 def range_str_to_set(in_str: str):
     """Convert a string representing a range to a set
     For example, inputting 4-6 would return {4, 5, 6}"""
@@ -83,5 +86,7 @@ if __name__ == "__main__":
     subset_count = count_range_pair_sets_that_have_a_subset(range_pair_sets)
     print(f"Sets with a subset: {subset_count}")
 
-    union_count = count_range_pair_sets_that_have_an_intersection(range_pair_sets)
-    print(f"Sets with a union: {union_count}")
+    intersection_count = count_range_pair_sets_that_have_an_intersection(
+        range_pair_sets
+    )
+    print(f"Sets with a intersection: {intersection_count}")
