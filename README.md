@@ -2,6 +2,8 @@
 
 These are my solutions to the 2022 Advent of code problems: https://adventofcode.com/2022
 
+![pytest](https://github.com/alex-precosky/AdventOfCode2022/actions/workflows/python-package.yml/badge.svg)
+
 # Requirements
 
 - python 3.6+
