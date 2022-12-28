@@ -1,4 +1,4 @@
-from day15 import Point, Sensor, manhattan_distance, parse_sensor
+from day15 import Point, Sensor, manhattan_distance, parse_sensor_and_beacon
 
 
 def test_manhattan_distance():
@@ -17,7 +17,17 @@ def test_parse_sensor():
     expected_point = Point(2, -18)
     expected_distance = 2 + 2 + 18 + 15
 
-    actual = parse_sensor(target)
+    actual, _ = parse_sensor_and_beacon(target)
 
     assert expected_point == actual.point
     assert expected_distance == actual.dist_to_beacon
+
+
+def test_parse_beacon():
+    target = "Sensor at x=2, y=-18: closest beacon is at x=-2, y=15"
+
+    expected_point = Point(-2, 15)
+
+    _, actual = parse_sensor_and_beacon(target)
+
+    assert expected_point == actual.point

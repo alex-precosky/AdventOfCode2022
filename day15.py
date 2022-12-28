@@ -58,7 +58,7 @@ def find_one_sensor_coverage_on_line(
 ) -> Tuple[int, int]:
     """At some row of interest in space, a sensor will have a certain
     coverage. Find this left and right extreme of coverage. Part 1 needs this
-    value"""
+    value."""
     sensor_range = sensor.dist_to_beacon
     distance_to_row = abs(sensor.point.y - row_of_interest)
 
